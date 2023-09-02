@@ -1,0 +1,133 @@
+type Query {
+  """Retrieve single reservation by the given request ID iff it exists."""
+  reservationByRequestId(requestId: UUID!): ReservationType!
+
+  """Retrieve all reservations at once."""
+  reservations(before: String, after: String, first: Int, last: Int): ReservationConnection!
+
+  """
+  Simply query for getting all the cars at once. No pagination is currently possible.
+  """
+  cars(order: OrderDirection): [Car!]!
+}
+
+type ReservationType implements Node {
+  id: ID!
+  toRentAt: DateTime!
+  toReturnAt: DateTime!
+  durationMinutes: Int!
+  requestId: UUID
+  clientName: String!
+  car: Car!
+}
+
+"""An object with an ID"""
+interface Node {
+  """The ID of the object"""
+  id: ID!
+}
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+"""
+Leverages the internal Python implementation of UUID (uuid.UUID) to provide native UUID objects
+in fields, resolvers and input.
+"""
+scalar UUID
+
+type Car {
+  """
+  Interní ID vozu se skládá z řetězce začinajícího na C následovaného posloupností až 9 číslic.
+  """
+  carId: String!
+
+  """SPZ obsahuje až 10 znaků z toho alespoň jedna číslice."""
+  registrationNumber: String!
+  make: String!
+  model: String!
+}
+
+type ReservationConnection {
+  """Pagination data for this connection."""
+  pageInfo: PageInfo!
+  edges: [ReservationEdge!]!
+  totalCount: Int!
+}
+
+"""
+The Relay compliant `PageInfo` type, containing data necessary to paginate this connection.
+"""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type ReservationEdge {
+  node: ReservationType!
+  cursor: String!
+}
+
+enum OrderDirection {
+  ASCENDING
+  DESCENDING
+}
+
+type Mutation {
+  reserve(input: ReserveInput!): ReservePayload
+  addCar(input: AddCarInput!): AddCarPayload
+  deleteCar(input: DeleteCarInput!): DeleteCarPayload
+  updateCar(input: UpdateCarInput!): UpdateCarPayload
+}
+
+type ReservePayload {
+  payload: ReservationType
+}
+
+input ReserveInput {
+  toRentAt: DateTime
+  durationMinutes: Int!
+}
+
+type AddCarPayload {
+  payload: Car
+}
+
+input AddCarInput {
+  make: String!
+  model: String!
+  carId: String!
+  registrationNumber: String!
+}
+
+type DeleteCarPayload {
+  payload: Car
+}
+
+input DeleteCarInput {
+  carId: String!
+}
+
+type UpdateCarPayload {
+  payload: Car
+}
+
+input UpdateCarInput {
+  carId: String!
+  make: String
+  model: String
+  registrationNumber: String
+}

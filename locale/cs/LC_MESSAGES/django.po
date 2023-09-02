@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-01 20:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#: apps/carpool/admin.py:33 apps/carpool/models.py:25 apps/carpool/models.py:41
+msgid "car make"
+msgstr "výrobce"
+
+#: apps/carpool/apps.py:8
+msgid "car pool"
+msgstr "vozový park"
+
+#: apps/carpool/models.py:13
+msgid "car make name"
+msgstr "název výrobce"
+
+#: apps/carpool/models.py:14
+msgid "Simple name of the car make."
+msgstr "Zjednodušené jméno výrobce vozů."
+
+#: apps/carpool/models.py:20
+msgid "car make official name"
+msgstr "oficiální název výrobce"
+
+#: apps/carpool/models.py:21
+msgid "Official name of the car make (including Ltd. or GmbH)."
+msgstr "Oficialni (úplný) název výrobce vozů (včetně s.r.o. nebo a.s.)."
+
+#: apps/carpool/models.py:26
+msgid "car makes"
+msgstr "výrobci"
+
+#: apps/carpool/models.py:42
+msgid "Make of the car model_name."
+msgstr "Výrobce module vozu."
+
+#: apps/carpool/models.py:48 apps/carpool/models.py:53
+msgid "car model_name"
+msgstr "model_name"
+
+#: apps/carpool/models.py:49
+msgid "Model of a car."
+msgstr "Model vozu."
+
+#: apps/carpool/models.py:54
+msgid "car models"
+msgstr "modely"
+
+#: apps/carpool/models.py:69 apps/carpool/models.py:90
+msgid "car"
+msgstr "vůz"
+
+#: apps/carpool/models.py:70
+msgid "Model of the given car."
+msgstr "Model daného vozu."
+
+#: apps/carpool/models.py:78
+msgid "internal car ID"
+msgstr "interní ID vozu"
+
+#: apps/carpool/models.py:79
+msgid ""
+"Internal car ID that consists of a string with C-prefix and up to 10 decimal "
+"digits."
+msgstr ""
+"Interní ID vozu se skládá z řetězce začinajícího na C následovaného "
+"posloupností až 9 číslic."
+
+#: apps/carpool/models.py:85
+msgid "car registration number"
+msgstr "SPZ"
+
+#: apps/carpool/models.py:86
+msgid ""
+"Car registration number that consists from 8 characters with at least one "
+"digit."
+msgstr "SPZ obsahuje až 10 znaků z toho alespoň jedna číslice."
+
+#: apps/carpool/models.py:91
+msgid "cars"
+msgstr "vozy"
+
+#: apps/carpool/validators.py:11
+msgid "invalid car id type"
+msgstr "špatný typ ID vozu"
+
+#: apps/carpool/validators.py:14
+msgid "invalid car id"
+msgstr "špatné ID vozu"
+
+#: apps/reservation/admin.py:11 apps/reservation/admin.py:80
+msgid "duration"
+msgstr "doba"
+
+#: apps/reservation/admin.py:22
+msgid "X <= hour"
+msgstr "X <= hodina"
+
+#: apps/reservation/admin.py:23
+msgid "hour < X <= day"
+msgstr "hodina < X <= den"
+
+#: apps/reservation/admin.py:24
+msgid "day < X <= week"
+msgstr "den < X <= týden"
+
+#: apps/reservation/admin.py:25
+msgid "week < X <= 2 weeks"
+msgstr "týden < X <= 2 týdny"
+
+#: apps/reservation/admin.py:26
+msgid "2 weeks < X"
+msgstr "2 týdny < X"
+
+#: apps/reservation/admin.py:55 apps/reservation/models.py:12
+msgid "to rent at"
+msgstr "čas zapůjční"
+
+#: apps/reservation/admin.py:60 apps/reservation/models.py:18
+msgid "to return at"
+msgstr "čas navrácení"
+
+#: apps/reservation/admin.py:84
+msgid "model_name"
+msgstr "model_name"
+
+#: apps/reservation/apps.py:8 apps/reservation/models.py:45
+msgid "reservation"
+msgstr "rezervace"
+
+#: apps/reservation/models.py:13
+msgid ""
+"Timestamp representing the time intent when a car shall be acquired from the "
+"rental."
+msgstr "Okamžik pro vyzvednutí vozu."
+
+#: apps/reservation/models.py:19
+msgid ""
+"Timestamp representing time intent when a car shall be returned to the "
+"rental."
+msgstr "Okamžik pro navrácení vozu."
+
+#: apps/reservation/models.py:27
+msgid "car for rent"
+msgstr "vůz pro zápůjčku"
+
+#: apps/reservation/models.py:28
+msgid "The car that has been pre-selected for the rental"
+msgstr "Vůz pro zápůjčku"
+
+#: apps/reservation/models.py:33
+msgid "request ID"
+msgstr "ID požadavku"
+
+#: apps/reservation/models.py:34
+msgid ""
+"ID of request that is internally generated as soon as reservation request is "
+"pending."
+msgstr "ID požadavku vygenerované v okamžiku požádání o registraci."
+
+#: apps/reservation/models.py:40
+msgid "client name"
+msgstr "jméno klienta"
+
+#: apps/reservation/models.py:41
+msgid "Name of the client who reserved the car rental."
+msgstr "Jméno klienta ktery provedl rezervaci vozu."
+
+#: apps/reservation/models.py:46
+msgid "reservations"
+msgstr "rezervace"
+
+#: libs/admin/filters.py:21
+msgid "past"
+msgstr "minulost"
+
+#: libs/admin/filters.py:22
+msgid "today"
+msgstr "dnes"
+
+#: libs/admin/filters.py:23
+msgid "tomorrow"
+msgstr "zítra"
+
+#: libs/admin/filters.py:24
+msgid "this week"
+msgstr "tento týden"
+
+#: libs/admin/filters.py:25
+msgid "this month"
+msgstr "tento měsíc"
+
+#: libs/admin/filters.py:26
+msgid "future"
+msgstr "budoucnost"
